@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f6">
+<title>For Kout Kout 💗</title>
+<style>
+:root{--pink:#f45b98;--deep:#a93e70;--ink:#563247;--muted:#936c80}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:"Trebuchet MS",system-ui,sans-serif;background:linear-gradient(140deg,#fff1f6,#fffaf1 55%,#f4efff);background-size:180% 180%;animation:backgroundDrift 18s ease-in-out infinite alternate;overflow-x:hidden}
+@keyframes backgroundDrift{0%{background-position:0% 20%}100%{background-position:100% 80%}}
+.ambient{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(2px);opacity:.35;animation:orbFloat 12s ease-in-out infinite alternate}
+.orb.one{width:180px;height:180px;left:-55px;top:18%;background:#ffb9d5}
+.orb.two{width:240px;height:240px;right:-90px;top:55%;background:#d8c5ff;animation-delay:-4s}
+.orb.three{width:120px;height:120px;left:65%;top:78%;background:#ffe1a8;animation-delay:-7s}
+@keyframes orbFloat{from{transform:translate3d(0,0,0) scale(.9)}to{transform:translate3d(24px,-38px,0) scale(1.12)}}
+body>*:not(.ambient){position:relative;z-index:1}
+.hero{min-height:76svh;display:grid;place-items:center;text-align:center;padding:70px 20px 45px;position:relative}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 25%,#ffc8dd90,transparent 27%),radial-gradient(circle at 85% 70%,#d9c8ff80,transparent 30%);pointer-events:none}
+.hero-inner{position:relative;max-width:760px;animation:heroEntrance 1.1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes heroEntrance{from{opacity:0;transform:translateY(28px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.pill{animation:softGlow 3s ease-in-out infinite}
+@keyframes softGlow{0%,100%{box-shadow:0 0 0 0 #ff9dc833}50%{box-shadow:0 0 0 8px #ff9dc800}}
+.pill{display:inline-block;padding:8px 14px;border:1px solid #ffd3e3;border-radius:999px;background:#ffffffc9;color:#b34878;font-size:.82rem}
+.art{font-size:clamp(3.5rem,12vw,6rem);margin:20px 0;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px) rotate(2deg)}}
+h1{font-size:clamp(3rem,10vw,6.2rem);line-height:1;letter-spacing:-.06em;margin:12px 0}
+.gradient{background:linear-gradient(100deg,#ff4e91,#a16de0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:1.08rem;line-height:1.8;color:#79566a;max-width:650px;margin:20px auto 26px}
+.btn{display:inline-block;border:0;border-radius:999px;padding:13px 20px;background:linear-gradient(110deg,#ff5c9a,#b17ce8);color:#fff;font-weight:800;cursor:pointer;box-shadow:0 10px 22px #d95b9835;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+section{max-width:1050px;margin:auto;padding:70px 20px}
+.head{text-align:center;margin-bottom:30px}
+.kicker{text-transform:uppercase;letter-spacing:.15em;color:#d04b85;font-size:.76rem;font-weight:900}
+h2{font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.04em;margin:8px 0 12px}
+.lead{color:var(--muted);line-height:1.7;max-width:650px;margin:auto}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.photo{position:relative;display:grid;place-items:center;min-height:270px;aspect-ratio:4/5;overflow:hidden;border-radius:24px;border:2px dashed #eea0c0;background:linear-gradient(145deg,#ffe0ec,#e6d9ff);cursor:pointer;box-shadow:0 10px 25px #9f5b7a0d;transform:translateY(0);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s,border-color .35s}
+.photo:hover{transform:translateY(-10px) rotate(-1deg) scale(1.025);box-shadow:0 24px 45px #a94a7830;border-color:#f45b98}
+.photo:nth-child(2):hover{transform:translateY(-10px) rotate(1deg) scale(1.025)}
+.photo img{transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .5s}
+.photo:hover img{transform:scale(1.08);filter:saturate(1.08)}
+.photo .placeholder span{animation:iconBob 2.6s ease-in-out infinite}
+.photo:nth-child(2) .placeholder span{animation-delay:-.8s}
+.photo:nth-child(3) .placeholder span{animation-delay:-1.5s}
+@keyframes iconBob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-8px) rotate(4deg)}}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+.placeholder{text-align:center;padding:18px;color:#8e5271;line-height:1.5}
+.placeholder span{display:block;font-size:2.8rem;margin-bottom:10px}
+.photo input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.tag{position:absolute;left:10px;right:10px;bottom:10px;background:#ffffffdf;border-radius:12px;padding:9px;font-size:.83rem;text-align:center}
+.note{text-align:center;color:var(--muted);font-size:.85rem;line-height:1.6;margin-top:15px}
+.letter-area{max-width:760px;margin:auto;text-align:center}
+.envelope{font-size:4.5rem;margin:0 auto 15px;animation:envelopeFloat 2.8s ease-in-out infinite;filter:drop-shadow(0 10px 12px #d65a8b20);display:inline-block}
+@keyframes envelopeFloat{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-12px) rotate(4deg) scale(1.06)}}
+.envelope.opening{animation:envelopePop .65s cubic-bezier(.2,.8,.2,1)}
+@keyframes envelopePop{0%{transform:scale(1) rotate(0)}35%{transform:scale(1.35) rotate(-12deg)}70%{transform:scale(.92) rotate(8deg)}100%{transform:scale(1) rotate(0)}}
+.letter{display:none;margin-top:25px;background:#fffdfc;border:1px solid #ffe0eb;border-radius:26px;padding:clamp(22px,5vw,45px);text-align:left;line-height:1.95;white-space:pre-line;box-shadow:0 20px 60px #a65a7b17}
+.letter.show{display:block;animation:letterReveal .9s cubic-bezier(.2,.8,.2,1)}
+@keyframes letterReveal{0%{opacity:0;transform:translateY(30px) scale(.96);filter:blur(5px)}65%{opacity:1;filter:blur(0);transform:translateY(-4px) scale(1.01)}100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+.letter.show:before{content:"💗  ✨  💗";display:block;text-align:center;letter-spacing:.4em;margin-bottom:18px;color:#df6a9a;font-size:1.15rem;animation:twinkle 1.8s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.65;transform:scale(.98)}50%{opacity:1;transform:scale(1.04)}}
+@keyframes rise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+footer{text-align:center;padding:25px 15px 40px;color:#9b7186;font-size:.9rem}
+.heart{position:fixed;bottom:-40px;pointer-events:none;z-index:10;animation:up linear forwards;filter:drop-shadow(0 3px 4px #d94e8730)}
+@keyframes up{0%{transform:translateY(0) rotate(0) scale(.7);opacity:0}12%{opacity:1}80%{opacity:.9}100%{transform:translateY(-110vh) rotate(360deg) scale(1.25);opacity:0}}
+.sparkle{position:fixed;pointer-events:none;z-index:12;color:#f7a8c8;font-size:16px;animation:sparkleOut .85s ease-out forwards}
+@keyframes sparkleOut{from{opacity:0;transform:translate(-50%,-50%) scale(.3) rotate(0)}25%{opacity:1}to{opacity:0;transform:translate(-50%,-75px) scale(1.4) rotate(90deg)}}
+.confetti{position:fixed;top:-18px;z-index:20;pointer-events:none;animation:confettiFall 3.4s cubic-bezier(.2,.6,.4,1) forwards}
+@keyframes confettiFall{to{transform:translate3d(var(--drift),110vh,0) rotate(900deg);opacity:.15}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.btn{transition:transform .25s,box-shadow .25s,filter .25s}
+.btn:hover{box-shadow:0 14px 28px #d95b9855;filter:saturate(1.12)}
+.btn:active{transform:scale(.96)}
+.tag{transition:transform .35s,background .35s}
+.photo:hover .tag{transform:translateY(-3px);background:#fff}
+@media(prefers-reduced-motion:reduce){.ambient,.orb,.sparkle,.confetti{display:none!important}.reveal{opacity:1;transform:none}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media(max-width:680px){.gallery{grid-template-columns:1fr 1fr;gap:10px}.photo{min-height:190px}.gallery .photo:last-child{grid-column:1/-1;max-width:calc(50% - 5px);width:100%;justify-self:center}section{padding:55px 15px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="ambient" aria-hidden="true"><span class="orb one"></span><span class="orb two"></span><span class="orb three"></span></div>
+<header class="hero">
+  <div class="hero-inner">
+    <span class="pill">A little birthday surprise, made with love 💌</span>
+    <div class="art" aria-hidden="true">🎀💗🌷</div>
+    <div class="kicker">For my favorite person</div>
+    <h1>Happy Birthday,<br><span class="gradient">Kout Kout!</span></h1>
+    <p>No memes, no quizzes, no distractions—just our memories and a letter from my heart. Today is your day, my lovely girl. 🥹❤️</p>
+    <button class="btn" onclick="document.querySelector('#photos').scrollIntoView({behavior:'smooth'});hearts(12)">See our memories 💕</button>
+  </div>
+</header>
+
+<section id="photos" class="reveal">
+  <div class="head">
+    <div class="kicker">Our little corner of the universe</div>
+    <h2>Memories with you 📸</h2>
+    <p class="lead">Every photo holds a little piece of our story. Tap a frame to preview a photo from your device.</p>
+  </div>
+  <div class="gallery">
+    <label class="photo">
+      <img alt="Our favorite photo together">
+      <div class="placeholder"><span>🫶</span>Our favorite photo<br><small>Tap to add a picture</small></div>
+      <input type="file" accept="image/*" aria-label="Choose first photo" onchange="previewPhoto(this)">
+      <span class="tag">My favorite view</span>
+    </label>
+    <label class="photo">
+      <img alt="A silly memory together">
+      <div class="placeholder"><span>📷</span>A silly moment<br><small>Tap to add a picture</small></div>
+      <input type="file" accept="image/*" aria-label="Choose second photo" onchange="previewPhoto(this)">
+      <span class="tag">Partners in crime</span>
+    </label>
+    <label class="photo">
+      <img alt="A special memory together">
+      <div class="placeholder"><span>🌷</span>A moment to keep<br><small>Tap to add a picture</small></div>
+      <input type="file" accept="image/*" aria-label="Choose third photo" onchange="previewPhoto(this)">
+      <span class="tag">Us being us</span>
+    </label>
+  </div>
+  <p class="note">Before publishing, add your photos permanently to the website folder so Kout Kout can see them too. The picker above is only a local preview.</p>
+</section>
+
+<section id="letterSection" class="reveal">
+  <div class="head">
+    <div class="kicker">Just from my heart to yours</div>
+    <h2>A letter for Kout Kout 💌</h2>
+    <p class="lead">Take a breath, birthday girl. This part is just for you. ❤️</p>
+  </div>
+  <div class="letter-area">
+    <div class="envelope" id="envelope">💌</div>
+    <button class="btn" id="openBtn" onclick="openLetter()">Open your letter, Kout Kout 🥹</button>
+    <article class="letter" id="letter">To my lovely Kout Kout, 💗
+
+Happy birthday, my love!
+
+I hope today reminds you how special you are—not just because it’s your birthday, but because you make ordinary days feel special just by being in them.
+
+You are my favorite notification, my favorite distraction, my favorite person to annoy (with love, obviously 😌), and one of the best things that has happened to me. If loving you were a full-time job, I’d happily work overtime—with no salary, just hugs.
+
+I can’t promise every day will be perfect, and I can’t promise I’ll never make a silly joke at the wrong time. But I can promise to keep trying, keep listening, keep cheering for you, and keep choosing you.
+
+May this new year of your life bring you peace, laughter, good health, beautiful surprises, and all the little things that make your eyes sparkle. When life gets heavy, I hope you remember that you don’t have to carry everything alone.
+
+And finally, please remember: you are loved more than this website can possibly explain. I tried to fit it all in, but the HTML file started crying. 🥹
+
+Happy birthday, my Kout Kout. Keep shining, keep being wonderfully you, and save me a little cake. 🎂
+
+With all my love,
+Your favorite boyfriend ❤️</article>
+  </div>
+</section>
+<footer>Made with 💗, just for Kout Kout · October 13, 2026 🎂</footer>
+<script>
+function openLetter(){
+  const letter=document.getElementById('letter');
+  const envelope=document.getElementById('envelope');
+  letter.classList.remove('show');
+  void letter.offsetWidth;
+  letter.classList.add('show');
+  envelope.textContent='💖';
+  envelope.classList.remove('opening');
+  void envelope.offsetWidth;
+  envelope.classList.add('opening');
+  document.getElementById('openBtn').textContent='Opened with love ❤️';
+  hearts(28);
+  confetti(90);
+  letter.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function confetti(count){
+  const bits=['💗','💕','✨','🌸','🎀','💖'];
+  for(let i=0;i<count;i++){
+    const bit=document.createElement('span');
+    bit.className='confetti';
+    bit.textContent=bits[Math.floor(Math.random()*bits.length)];
+    bit.style.left=Math.random()*100+'vw';
+    bit.style.fontSize=(12+Math.random()*18)+'px';
+    bit.style.setProperty('--drift',((Math.random()-.5)*220)+'px');
+    bit.style.animationDuration=(2.5+Math.random()*2)+'s';
+    bit.style.animationDelay=(Math.random()*.7)+'s';
+    document.body.appendChild(bit);
+    setTimeout(()=>bit.remove(),5200);
+  }
+}
+function sparkleAt(x,y){
+  const el=document.createElement('span');
+  el.className='sparkle';
+  el.textContent=['✦','✧','♡','✨'][Math.floor(Math.random()*4)];
+  el.style.left=x+'px';el.style.top=y+'px';
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),1000);
+}
+document.addEventListener('pointerdown',e=>{
+  if(e.target.closest('button,.photo')) sparkleAt(e.clientX,e.clientY);
+});
+const revealObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target);}
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+// A few gentle floating hearts arrive on their own, without overwhelming the page.
+setInterval(()=>{
+  if(document.hidden || window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  if(Math.random()<.45) hearts(1);
+},4200);
+function hearts(count){
+  const symbols=['💗','💖','💕','✨','🌸'];
+  for(let i=0;i<count;i++){
+    setTimeout(()=>{
+      const el=document.createElement('span');
+      el.className='heart';
+      el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+      el.style.left=Math.random()*100+'vw';
+      el.style.fontSize=(18+Math.random()*22)+'px';
+      el.style.animationDuration=(3+Math.random()*3)+'s';
+      document.body.appendChild(el);
+      setTimeout(()=>el.remove(),6500);
+    },i*80);
+  }
+}
+function previewPhoto(input){
+  const file=input.files&&input.files[0];
+  if(!file)return;
+  const box=input.closest('.photo');
+  const img=box.querySelector('img');
+  const placeholder=box.querySelector('.placeholder');
+  const reader=new FileReader();
+  reader.onload=e=>{img.src=e.target.result;img.style.display='block';placeholder.style.display='none'};
+  reader.readAsDataURL(file);
+}
+</script>
+</body>
+</html>
